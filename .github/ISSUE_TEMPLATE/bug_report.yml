@@ -1,0 +1,40 @@
+name: "Calculation Error / Singularity Leak"
+description: "Report an instance where an anomaly integral diverged or the filter experienced a computation error."
+title: "[PTM Error]: "
+labels: ["bug", "mathematical-physics"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for stress-testing **The Periodic Table of the Multiverse (PTM)**. Please fill out the tracking details below so we can analyze why the Function Mark regulator experienced a scale breakdown.
+
+  - type: textarea
+    id: element-input
+    attributes:
+      label: "Terrestrial Element Input & Target Dimensions"
+      description: "Specify which element and dimension parameters triggered the calculation crash."
+      placeholder: "e.g., Target Element: Uranium, Target Dimension: D=6"
+    validations:
+      required: true
+
+  - type: textarea
+    id: mathematical-behavior
+    attributes:
+      label: "Observed Discrepancy"
+      description: "Describe exactly what went wrong with the data vector. Did an infinity leak past the heat-kernel? Did it return negative probabilities?"
+      placeholder: "The loop calculation experienced a trans-Planckian overflow error because..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: engine-mode
+    attributes:
+      label: "Engine Configuration Scale (k)"
+      description: "Select the running cutoff scale status utilized during the evaluation run."
+      options:
+        - "Infinitesimal Limit (k -> 0)"
+        - "Planck Scale Boundary (k -> M_Planck)"
+        - "Infinite Ultraviolet Limit (k -> Infinity)"
+        - "Dynamic Dimensional Scale Modulating"
+    validations:
+      required: true
