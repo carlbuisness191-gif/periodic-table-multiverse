@@ -31,7 +31,7 @@ To run the programmatic element generator on your machine, clone this repository
 
 ```bash
 # Clone the repository
-git clone https://github.com
+git clone https://github.com/carlbuisness191-gif/periodic-table-multiverse
 
 # Enter the directory
 cd periodic-table-multiverse
